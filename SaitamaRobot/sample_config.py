@@ -24,7 +24,7 @@ class Config(object):
 
     #RECOMMENDED
 
-    SQLALCHEMY_DATABASE_URI = 'something://somewhat:user@hosturl:port/databasename'  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL').replace("://", "ql://", 1)  # needed for any database modules
     MESSAGE_DUMP = -1001253661229  # needed to make sure 'save from' messages persist
     GBAN_LOGS = -1001190806654
     LOAD = []
